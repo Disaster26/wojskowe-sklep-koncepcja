@@ -109,7 +109,7 @@ function initGal(root){
 document.addEventListener('click',function(e){
   var b=e.target.closest('[data-dodaj]');if(!b)return;
   e.preventDefault();var p=byId[b.getAttribute('data-dodaj')];
-  addToCart(p.id,{},1,p.pr);toast('Dodano do koszyka: '+p.n);otworzMini();
+  addToCart(p.id,{},1,p.pr);otworzMini();
 });
 
 /* ---------- widoki ---------- */
@@ -265,7 +265,7 @@ function widokProdukt(id){
     });
     if(bl){bl.scrollIntoView({behavior:'smooth',block:'center'});var f=$('button,select,input',bl);if(f)setTimeout(function(){f.focus({preventScroll:true})},350);toast('Uzupełnij wybór, a potem dodaj do koszyka');return}
     addToCart(p.id,opts,Math.max(1,Math.min(99,+ile.value||1)),cena());
-    toast('Dodano do koszyka');otworzMini();
+    otworzMini();
   }
   $('#dodaj').addEventListener('click',dodaj);
   /* sticky na telefonie */
