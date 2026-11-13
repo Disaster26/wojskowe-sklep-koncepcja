@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>wojskowe.com.pl - sklep mundurowy z Dęblina (koncepcja)</title>
+<meta name="description" content="Koncepcja nowego sklepu wojskowe.com.pl: pochewki, stopnie, gapy, kordziki, koszule i nakrycia głowy dla wojsk lotniczych i lądowych. Wersja demonstracyjna.">
+<meta name="theme-color" content="#1C3526">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 40'%3E%3Cpath d='M2 9 14 2l12 7v29H2z' fill='%231C3526'/%3E%3Crect x='6' y='20' width='16' height='3.4' fill='%23F0E628'/%3E%3Crect x='6' y='27' width='16' height='3.4' fill='%23F0E628'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=1">
+<style>
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+<header class="naglowek" id="naglowek">
+  <div class="ng-rzad wrap">
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu-mob"><span></span><span></span><span></span></button>
+    <a class="logo" href="#/" aria-label="wojskowe.com.pl, strona główna">
+      <svg class="logo-znak" viewBox="0 0 28 40" aria-hidden="true"><path d="M2 9 14 2l12 7v29H2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="14" cy="10.5" r="2.1" fill="currentColor"/><rect x="6" y="20" width="16" height="3.4" fill="currentColor"/><rect x="6" y="27" width="16" height="3.4" fill="currentColor"/></svg>
+      <span class="logo-tekst"><b>WOJSKOWE</b><i>.COM.PL</i></span>
+    </a>
+    <form class="szukaj" id="szukaj" role="search" autocomplete="off">
+      <label class="sr" for="szukaj-pole">Szukaj w sklepie</label>
+      <input id="szukaj-pole" type="search" placeholder="Szukaj: pochewki, gapa, kordzik..." enterkeyhint="search">
+      <button type="submit" aria-label="Szukaj"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="m13 13 4.6 4.6" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg></button>
+      <div class="podpowiedzi" id="podpowiedzi" hidden></div>
+    </form>
+    <a class="ng-tel" href="tel:+48818830568">81 883 05 68</a>
+    <button class="koszyk-btn" id="koszyk-btn" aria-label="Koszyk" aria-controls="mini">
+      <span class="kb-tekst">Koszyk</span>
+      <span class="kb-licznik" id="kb-licznik">0</span>
+    </button>
+  </div>
+  <nav class="menu" aria-label="Kategorie">
+    <ul class="wrap" id="menu-lista"></ul>
+  </nav>
+</header>
+<div class="menu-mob" id="menu-mob" hidden>
+  <div class="mm-panel">
+    <p class="mm-tyt">Kategorie</p>
+    <ul id="menu-mob-lista"></ul>
+    <ul class="mm-dod">
+      <li><a href="#/sklepy">Sklepy w Dęblinie i Rykach</a></li>
+      <li><a href="#/informacje">Wysyłka i zwroty</a></li>
+      <li><a href="tel:+48818830568">Telefon: 81 883 05 68</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="tresc" tabindex="-1"></main>
+
+<footer class="stopka">
+  <div class="tasma" aria-hidden="true"></div>
+  <div class="wrap st-siatka">
+    <div class="st-kol st-firma">
+      <a class="logo logo-ciemne" href="#/" aria-label="wojskowe.com.pl">
+        <svg class="logo-znak" viewBox="0 0 28 40" aria-hidden="true"><path d="M2 9 14 2l12 7v29H2z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="14" cy="10.5" r="2.1" fill="currentColor"/><rect x="6" y="20" width="16" height="3.4" fill="currentColor"/><rect x="6" y="27" width="16" height="3.4" fill="currentColor"/></svg>
+        <span class="logo-tekst"><b>WOJSKOWE</b><i>.COM.PL</i></span>
+      </a>
+      <p>Sklep Wielobranżowy Maciej Szymański<br>ul. Bankowa 24, 08-530 Dęblin<br>NIP 716-244-90-53</p>
+    </div>
+    <div class="st-kol">
+      <p class="st-tyt">Sklep</p>
+      <ul id="stopka-kat"></ul>
+    </div>
+    <div class="st-kol">
+      <p class="st-tyt">Informacje</p>
+      <ul>
+        <li><a href="#/informacje">Wysyłka i zwroty</a></li>
+        <li><a href="#/sklepy">Sklepy stacjonarne</a></li>
+        <li><a href="#/polityka">Polityka prywatności</a></li>
+        <li><button class="link-btn" id="cookies-ustaw" type="button">Ustawienia cookies</button></li>
+      </ul>
+    </div>
+    <div class="st-kol">
+      <p class="st-tyt">Kontakt</p>
+      <ul>
+        <li><a href="tel:+48818830568">81 883 05 68</a></li>
+        <li><a href="tel:+48604444904">604 444 904</a></li>
+        <li><a href="tel:+48506167647">506 167 647</a></li>
+        <li><a href="mailto:wojtekszym@wp.pl">wojtekszym@wp.pl</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap st-dol">
+    <span>&copy; <span id="rok">2026</span> wojskowe.com.pl. Wersja demonstracyjna, zdjęcia i ceny z obecnego sklepu.</span>
+    <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=wojskowe.com.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+  </div>
+</footer>
+
+<div class="mini-tlo" id="mini-tlo" hidden></div>
+<aside class="mini" id="mini" aria-label="Koszyk" aria-hidden="true">
+  <div class="mini-gora"><p class="mini-tyt">Twój koszyk</p><button class="mini-zamknij" id="mini-zamknij" aria-label="Zamknij koszyk"><span></span><span></span></button></div>
+  <div class="mini-lista" id="mini-lista"></div>
+  <div class="mini-dol" id="mini-dol"></div>
+</aside>
+
+<div class="sticky-kup" id="sticky-kup" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="cookies" id="cookies" hidden>
+  <p>Sklep używa plików cookies niezbędnych do działania koszyka. Mapy Google mogą zapisywać własne pliki. Szczegóły w <a href="#/polityka">polityce prywatności</a>.</p>
+  <div class="ck-przyciski"><button class="btn btn-ciemny" id="ck-ok" type="button">Akceptuję</button><button class="btn btn-obrys" id="ck-nie" type="button">Tylko niezbędne</button></div>
+</div>
+
+<script src="js/data.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
+</body>
+</html>
